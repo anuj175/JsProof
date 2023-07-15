@@ -1,0 +1,40 @@
+// Create an array to hold the NFTs
+const NFTs = [];
+
+// Function to mint an NFT and store it in the array
+function mintNFT(name, city, age, cloth, clothColor) {
+  const nft = {
+    name,
+    city,
+    age,
+    cloth,
+    clothColor,
+  };
+  NFTs.push(nft);
+  console.log("Minted: " + name);
+}
+
+// Function to list all the NFTs and their metadata
+function listNFTs() {
+  NFTs.forEach((nft, index) => {
+    console.log("\nID: " + (index + 1));
+    console.log("Name: " + nft.name);
+    console.log("City: " + nft.city);
+    console.log("Age: " + nft.age);
+    console.log("Cloth: " + nft.cloth);
+    console.log("Cloth Color: " + nft.clothColor);
+  });
+}
+
+// Function to print the total number of minted NFTs
+function getTotalSupply() {
+  console.log("\nTotal Supply: " + NFTs.length);
+}
+
+// Call the functions to mint NFTs and perform operations
+mintNFT("Young", "Mumbai", "20", "Shirt", "Blue");
+mintNFT("Angle", "Pune", "17", "T-Shirt", "Yellow");
+mintNFT("Zubair", "Chandigarh", "25", "Shirt", "Light Green");
+
+listNFTs();
+getTotalSupply();
